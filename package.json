@@ -1,0 +1,14 @@
+{
+  "name": "cloudgate-ui-run-test-app",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Fixture app for the Cloudgate U-run (git providers, builds, previews).",
+  "main": "server.js",
+  "scripts": {
+    "build": "node -e \"require('fs').writeFileSync('build-info.json', JSON.stringify({ buildArg: process.env.BUILD_ARG || null }))\"",
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

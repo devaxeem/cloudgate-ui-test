@@ -1,0 +1,20 @@
+# Two services and a named volume, for Compose-from-git (U09/U10).
+services:
+  app:
+    build:
+      context: .
+      target: runtime
+      args:
+        BUILD_ARG: ${BUILD_ARG:-from-compose}
+    environment:
+      - GREETING=${GREETING:-hello from compose}
+    depends_on:
+      - cache
+  cache:
+    image: redis:7-alpine
+    command: ["redis-server", "--appendonly", "yes"]
+    volumes:
+      - cache-data:/data
+
+volumes:
+  cache-data:
