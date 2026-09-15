@@ -6,7 +6,7 @@ const http = require('node:http');
 const fs = require('node:fs');
 const path = require('node:path');
 
-const VERSION = '1.1.0';
+const VERSION = '2.0.0-preview3';
 const port = Number(process.env.PORT || 3000);
 
 function buildInfo() {
